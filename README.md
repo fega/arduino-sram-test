@@ -24,6 +24,17 @@ void setup(){
 ```
 Allocates VAR in the static memory only one time. the same happens when you use numbers
 
+Also, if you uses something like
+```c++
+# define VAR "A string"
+# define VAR1 "A string"
+
+void setup(){
+  Serial.print(VAR);
+  Serial.print(VAR1);
+}
+```
+The compilator is smarth enough to compile only one time in the Static memory
 ### Test 3: const Memory Usage
 
 ### Test 4: Repeated strings memory usage
