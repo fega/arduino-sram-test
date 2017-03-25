@@ -12,6 +12,17 @@ All test was made in an Arduino UNO.
 A very simple test. used as a reference
 
 ### Test 2: #Define Memory Usage
+Using the #Define defining Strings instruction will not repeat the data into the static variables. it means that:
+
+```c++
+# define VAR "A string"
+void setup(){
+  Serial.print(VAR);
+  Serial.print(VAR);
+  Serial.print(VAR);
+}
+```
+Allocates VAR in the static memory only one time. the same happens when you use numbers
 
 ### Test 3: const Memory Usage
 
