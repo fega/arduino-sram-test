@@ -63,7 +63,16 @@ For the other side, it looks like that "const" is efficient when is manages Floa
 Also, the const keyword is a lot more expensive in terms of flash memory used compared with the #define keyword
 
 ### Test 4: Repeated strings memory usage
-
+If you have a non-declared string like:
+```c++
+void setup() {
+  Serial.println("String");
+  Serial.println("String");
+  Serial.println("String");
+  Serial.println("String");
+}
+```
+The compiler only saves a copy of the `"String"` in the Static memory of the Arduino. But if you try to use the `F()` function (that is a common way to save the precious SRAM of your Arduino), it will create four copies of the string in the Flash memory, in those cases, the use of the [PROGMEM](https://www.arduino.cc/en/Reference/PROGMEM) Keyword could be wise.
 ### Test 5: if (someVar == true) Memory Usage
 
 ### Test 6: Nested function call Stack Usage.
