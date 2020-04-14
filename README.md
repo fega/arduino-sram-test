@@ -73,14 +73,7 @@ void setup() {
 }
 ```
 The compiler only saves a copy of the `"String"` in the Static memory of the Arduino. But if you try to use the `F()` function (that is a common way to save the precious SRAM of your Arduino), it will create four copies of the string in the Flash memory, in those cases, the use of the [PROGMEM](https://www.arduino.cc/en/Reference/PROGMEM) Keyword could be wise.
-### Test 5: if (someVar == true) Memory Usage
-Coming soon...
-### Test 6: Nested function call Stack Usage.
-Coming soon...
-### Test 7: defining or not byte array size
-Coming soon...
-###  Test 8: local variables minimization
-Coming soon...
+
 ## Useful material
 https://learn.adafruit.com/memories-of-an-arduino/arduino-memories
 
